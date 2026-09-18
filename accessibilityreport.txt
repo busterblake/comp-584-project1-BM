@@ -1,0 +1,10 @@
+After running my inital accessibility test the results were as follows
+
+Semantic Links
+Missing Title
+Page Language
+
+I was able to fix these by applying the fixes it recommneded
+
+When running these on popular websites i get a lot of the Semantic Links issues, most dont have any alarming issues
+and are just things that should be fixed but still allow screen readers to help. 
