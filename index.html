@@ -29,6 +29,63 @@
                 line-height: 24px !important;
             }
         }
+        @keyframes button-color {
+            0%, 100% {
+                background-color: #8e2722;
+            }
+
+            50% {
+                background-color: #000000;
+            }
+        }
+
+
+        .animated-button {
+        animation: button-color 3s ease-in-out infinite;
+        }
+
+        /* Radio-button class selector */
+        .class-radio {
+            margin: 0 4px 12px 12px;
+        }
+
+        .class-label {
+            display: inline-block;
+            margin: 0 8px 12px 0;
+            padding: 9px 12px;
+            border: 1px solid #d6a843;
+            border-radius: 3px;
+            background-color: #110e0d;
+            color: #f1cc78;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .class-radio:checked + .class-label {
+            background-color: #8e2722;
+            color: #ffffff;
+        }
+
+        .class-panel {
+            display: block;
+            margin-top: 12px;
+            padding: 18px;
+            border: 1px solid #6e251e;
+            background-color: #1a1412;
+            color: #f4e8cf;
+        }
+
+        /* Show only the panel belonging to the selected radio button */
+        #class-barbarian:checked ~ .panel-sorcerer,
+        #class-barbarian:checked ~ .panel-rogue,
+        #class-sorcerer:checked ~ .panel-barbarian,
+        #class-sorcerer:checked ~ .panel-rogue,
+        #class-rogue:checked ~ .panel-barbarian,
+        #class-rogue:checked ~ .panel-sorcerer {
+            display: none !important;
+        }
     </style>
 </head>
 
@@ -152,7 +209,7 @@
                                 <td style="padding: 25px 30px 40px;" align="center">
                                     <table role="presentation" border="0" cellspacing="0" cellpadding="0">
                                         <tr>
-                                            <td bgcolor="#8E2722" style="
+                                            <td class="animated-button" bgcolor="#8E2722" style="
                                                     background-color: #8E2722;
                                                     border: 1px solid #B64B3C;
                                                     border-radius: 4px;
@@ -253,7 +310,92 @@
                         </tr>
 
 
+                    <!-- Radio-button class selector -->
+                    <tr>
+                        <td
+                            style="
+                                padding: 30px 20px;
+                                background-color: #241b18;
+                                color: #f4e8cf;
+                            "
+                            align="center"
+                        >
+                            <div class="class-picker">
+                                <h2
+                                    style="
+                                        margin: 0 0 10px;
+                                        font-family: Georgia, 'Times New Roman', serif;
+                                        color: #f1cc78;
+                                    "
+                                >
+                                    Choose Your Class
+                                </h2>
 
+                                <p
+                                    style="
+                                        margin: 0 0 20px;
+                                        font-family: Arial, sans-serif;
+                                        font-size: 16px;
+                                        line-height: 24px;
+                                    "
+                                >
+                                    Select a class to reveal its combat style.
+                                </p>
+
+                                <input
+                                    class="class-radio"
+                                    type="radio"
+                                    name="class-choice"
+                                    id="class-barbarian"
+                                    checked="checked"
+                                >
+                                <label class="class-label" for="class-barbarian">
+                                    Barbarian
+                                </label>
+
+                                <input
+                                    class="class-radio"
+                                    type="radio"
+                                    name="class-choice"
+                                    id="class-sorcerer"
+                                >
+                                <label class="class-label" for="class-sorcerer">
+                                    Sorcerer
+                                </label>
+
+                                <input
+                                    class="class-radio"
+                                    type="radio"
+                                    name="class-choice"
+                                    id="class-rogue"
+                                >
+                                <label class="class-label" for="class-rogue">
+                                    Rogue
+                                </label>
+
+                                <div class="class-panel panel-barbarian">
+                                    <h3 style="margin: 0 0 8px;">Barbarian</h3>
+                                    <p style="margin: 0;">
+                                        Break through enemy lines using raw strength and heavy weapons.
+                                    </p>
+                                </div>
+
+                                <div class="class-panel panel-sorcerer">
+                                    <h3 style="margin: 0 0 8px;">Sorcerer</h3>
+                                    <p style="margin: 0;">
+                                        Control fire, ice, and lightning while fighting from a distance.
+                                    </p>
+                                </div>
+
+                                <div class="class-panel panel-rogue">
+                                    <h3 style="margin: 0 0 8px;">Rogue</h3>
+                                    <p style="margin: 0;">
+                                        Strike quickly using bows, traps, and concealed blades.
+                                    </p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
                         <!-- Footer -->
                                 <tr>
                                     <td style="
